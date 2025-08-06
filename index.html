@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laura Siri | Belleza, Estilo de Vida y Familia</title>
+    <meta name="theme-color" content="#f7b4d6">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-
     <header>
         <div class="container">
             <div class="logo">
                 <a href="#">Laura Siri</a>
             </div>
-            <nav class="main-nav">
-                <button class="hamburger-menu" aria-label="Abrir menú">
+            <nav class="main-nav" aria-label="Navegación principal">
+                <button class="hamburger-menu" aria-label="Abrir menú" aria-controls="main-menu" aria-expanded="false">
                     <i class="fas fa-bars"></i>
                 </button>
-                <ul class="nav-list">
+                <ul class="nav-list" id="main-menu">
                     <li><a href="#hero">Inicio</a></li>
                     <li><a href="#about">Acerca de Mí</a></li>
                     <li><a href="#blog">Blog</a></li>
                     <li class="dropdown">
-                        <a href="#categories-overview" class="dropbtn">Categorías <i class="fas fa-chevron-down"></i></a>
+                        <a href="#categories-overview" class="dropbtn" aria-haspopup="true" aria-expanded="false">Categorías <i class="fas fa-chevron-down"></i></a>
                         <div class="dropdown-content">
                             <a href="#blog-belleza">Belleza</a>
                             <a href="#blog-estilo-vida">Estilo de Vida</a>
@@ -55,9 +55,9 @@
         <section id="about" class="about-section container">
             <h2>Quién Soy</h2>
             <div class="about-content">
-                <img src="img/4cb63c24-6348-4e37-917e-6d3e421d35f6.jpg" alt="Foto de la Influencer" class="profile-pic">
+                <img src="img/4cb63c24-6348-4e37-917e-6d3e421d35f6.jpg" alt="Foto de Laura Siri, influencer de belleza y estilo de vida" class="profile-pic" loading="lazy">
                 <div class="about-text">
-                    <p>¡Hola! Soy Laura Siri, y estoy emocionada de compartir contigo mi viaje a través de la **belleza**, el **estilo de vida** y la **aventura de la maternidad**.</p>
+                    <p>¡Hola! Soy Laura Siri, y estoy emocionada de compartir contigo mi viaje a través de la <strong>belleza</strong>, el <strong>estilo de vida</strong> y la <strong>aventura de la maternidad</strong>.</p>
                     <p>En este espacio, encontrarás consejos prácticos sobre cuidado de la piel y maquillaje, ideas para vivir una vida más consciente y organizada, y mis experiencias honestas sobre criar a mi familia. Creo en la autenticidad y en encontrar la belleza en lo cotidiano. Mi misión es inspirarte a sentirte bien contigo misma, a crear un hogar lleno de amor y a disfrutar cada momento.</p>
                     <h3>Mis Valores</h3>
                     <ul>
@@ -74,28 +74,28 @@
             <h2>Últimas Publicaciones</h2>
             <div class="blog-grid">
                 <article class="blog-post">
-                    <img src="https://via.placeholder.com/400x250/FFC0CB/FFFFFF?text=Maquillaje+Natural" alt="Maquillaje Natural para el Día a Día">
+                    <img src="https://via.placeholder.com/400x250/FFC0CB/FFFFFF?text=Maquillaje+Natural" alt="Maquillaje Natural para el Día a Día" loading="lazy">
                     <h3>Maquillaje Natural para el Día a Día: Mi Rutina Rápida</h3>
                     <p class="category">Belleza</p>
                     <p>Descubre mis productos favoritos y trucos para un look fresco y radiante en solo 10 minutos.</p>
                     <a href="#" class="btn-secondary">Leer Más</a>
                 </article>
                 <article class="blog-post">
-                    <img src="https://via.placeholder.com/400x250/ADD8E6/FFFFFF?text=Organizacion+Hogar" alt="5 Hábitos para un Hogar Organizado">
+                    <img src="https://via.placeholder.com/400x250/ADD8E6/FFFFFF?text=Organizacion+Hogar" alt="5 Hábitos para un Hogar Organizado" loading="lazy">
                     <h3>5 Hábitos Sencillos para un Hogar Siempre Organizado</h3>
                     <p class="category">Estilo de Vida</p>
                     <p>Pequeños cambios que harán una gran diferencia en la paz de tu hogar. ¡Pruébalos!</p>
                     <a href="#" class="btn-secondary">Leer Más</a>
                 </article>
                 <article class="blog-post">
-                    <img src="https://via.placeholder.com/400x250/90EE90/FFFFFF?text=Actividades+Familia" alt="Actividades Divertidas en Familia">
+                    <img src="https://via.placeholder.com/400x250/90EE90/FFFFFF?text=Actividades+Familia" alt="Actividades Divertidas en Familia" loading="lazy">
                     <h3>Actividades Divertidas y Creativas para Hacer con Niños en Casa</h3>
                     <p class="category">Familia</p>
                     <p>Ideas para mantener a los pequeños entretenidos y crear recuerdos inolvidables juntos.</p>
                     <a href="#" class="btn-secondary">Leer Más</a>
                 </article>
                 <article class="blog-post">
-                    <img src="https://via.placeholder.com/400x250/FFD700/FFFFFF?text=Capsula+Armario" alt="Armario Cápsula Primavera">
+                    <img src="https://via.placeholder.com/400x250/FFD700/FFFFFF?text=Capsula+Armario" alt="Armario Cápsula Primavera" loading="lazy">
                     <h3>Crea tu Armario Cápsula de Primavera: Imprescindibles</h3>
                     <p class="category">Moda</p>
                     <p>Optimiza tu guardarropa con prendas versátiles y atemporales para esta temporada.</p>
@@ -133,12 +133,12 @@
         <section id="gallery" class="gallery-section">
             <h2>Galería de Inspiración</h2>
             <div class="gallery-carousel">
-                <img src="img/1.jpg" alt="Inspiración 1" class="carousel-item active">
-                <img src="img/2.jpg" alt="Inspiración 2" class="carousel-item">
-                <img src="img/3.jpg" alt="Inspiración 3" class="carousel-item">
-                <img src="https://via.placeholder.com/800x500/FFD700/FFFFFF?text=Foto+4" alt="Inspiración 4" class="carousel-item">
-                <button class="carousel-nav prev" aria-label="Anterior"><i class="fas fa-chevron-left"></i></button>
-                <button class="carousel-nav next" aria-label="Siguiente"><i class="fas fa-chevron-right"></i></button>
+                <img src="img/1.jpg" alt="Inspiración 1, maquillaje y belleza" class="carousel-item active" loading="lazy">
+                <img src="img/2.jpg" alt="Inspiración 2, estilo de vida" class="carousel-item" loading="lazy">
+                <img src="img/3.jpg" alt="Inspiración 3, familia y momentos" class="carousel-item" loading="lazy">
+                <img src="https://via.placeholder.com/800x500/FFD700/FFFFFF?text=Foto+4" alt="Inspiración 4, moda y outfits" class="carousel-item" loading="lazy">
+                <button class="carousel-nav prev" aria-label="Anterior" type="button"><i class="fas fa-chevron-left"></i></button>
+                <button class="carousel-nav next" aria-label="Siguiente" type="button"><i class="fas fa-chevron-right"></i></button>
             </div>
         </section>
 
@@ -163,10 +163,9 @@
             <div class="contact-info">
                 <h3>Para Colaboraciones:</h3>
                 <p>Si eres una marca o empresa interesada en colaborar, por favor, detalla tu propuesta en el mensaje o envía un correo directamente a: <a href="mailto:laurasiri2395@hotmail.com">laurasiri2395@hotmail.com</a></p>
-                <p>Puedes descargar mi <a href="" target="_blank">Media Kit aquí</a> (enlace a un PDF o página de Media Kit).</p>
+                <p>Puedes descargar mi <a href="media-kit.pdf" target="_blank">Media Kit aquí</a>.</p>
             </div>
         </section>
-
     </main>
 
     <footer>
