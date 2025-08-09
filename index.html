@@ -5,187 +5,270 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laura Siri | Belleza, Estilo de Vida y Familia</title>
     <meta name="theme-color" content="#f7b4d6">
-    <link rel="stylesheet" href="style.css">
+    <!-- Tailwind CSS para estilos utilitarios -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Frenword para animaciones y fuentes elegantes -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/frenword@latest/dist/frenword.min.css">
+    <!-- Font Awesome para iconos sociales y decorativos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- AOS Animate On Scroll para animaciones al hacer scroll -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="style2.css">
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <a href="#">Laura Siri</a>
+<body class="bg-gradient-to-br from-pink-50 to-pink-200 font-frenword-montserrat text-gray-800 min-h-screen">
+    <!-- Header: Logo, navegación principal y redes sociales -->
+    <header class="shadow-lg bg-white/80 backdrop-blur-md sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <!-- Logo animado -->
+            <div class="logo frenword-fade-in">
+                <a href="#" class="text-3xl font-frenword-playfair font-bold text-pink-400 tracking-wide">Laura Siri</a>
             </div>
+            <!-- Navegación principal con menú hamburguesa para móviles -->
             <nav class="main-nav" aria-label="Navegación principal">
-                <button class="hamburger-menu" aria-label="Abrir menú" aria-controls="main-menu" aria-expanded="false">
+                <button class="hamburger-menu md:hidden text-pink-400 text-2xl" aria-label="Abrir menú" aria-controls="main-menu" aria-expanded="false">
                     <i class="fas fa-bars"></i>
                 </button>
-                <ul class="nav-list" id="main-menu">
-                    <li><a href="#hero">Inicio</a></li>
-                    <li><a href="#about">Acerca de Mí</a></li>
-                    <li><a href="#blog">Blog</a></li>
-                    <li class="dropdown">
-                        <a href="#categories-overview" class="dropbtn" aria-haspopup="true" aria-expanded="false">Categorías <i class="fas fa-chevron-down"></i></a>
-                        <div class="dropdown-content">
-                            <a href="#blog-belleza">Belleza</a>
-                            <a href="#blog-estilo-vida">Estilo de Vida</a>
-                            <a href="#blog-familia">Familia</a>
-                            <a href="#blog-moda">Moda</a>
+                <ul class="nav-list hidden md:flex gap-6 items-center" id="main-menu">
+                    <li><a href="#hero" class="nav-link text-pink-400 hover:text-pink-600 transition">Inicio</a></li>
+                    <li><a href="#about" class="nav-link text-pink-400 hover:text-pink-600 transition">Acerca de Mí</a></li>
+                    <li><a href="#blog" class="nav-link text-pink-400 hover:text-pink-600 transition">Blog</a></li>
+                    <!-- Menú desplegable de categorías -->
+                    <li class="dropdown relative group">
+                        <a href="#categories-overview" class="dropbtn nav-link text-pink-400 hover:text-pink-600 transition flex items-center" aria-haspopup="true" aria-expanded="false">
+                            Categorías <i class="fas fa-chevron-down ml-1"></i>
+                        </a>
+                        <div class="dropdown-content absolute left-0 top-full bg-white shadow-lg rounded-lg mt-2 hidden group-hover:block">
+                            <a href="#blog-belleza" class="block px-4 py-2 hover:bg-pink-50">Belleza</a>
+                            <a href="#blog-estilo-vida" class="block px-4 py-2 hover:bg-pink-50">Estilo de Vida</a>
+                            <a href="#blog-familia" class="block px-4 py-2 hover:bg-pink-50">Familia</a>
+                            <a href="#blog-moda" class="block px-4 py-2 hover:bg-pink-50">Moda</a>
                         </div>
                     </li>
-                    <li><a href="#contact">Contacto</a></li>
-                    <li><a href="#shop" class="btn-primary">Tienda</a></li>
+                    <li><a href="#contact" class="nav-link text-pink-400 hover:text-pink-600 transition">Contacto</a></li>
+                    <li><a href="#shop" class="btn-primary nav-link bg-pink-400 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-500 transition">Tienda</a></li>
                 </ul>
             </nav>
-            <div class="social-icons">
-                <a href="https://instagram.com/tuinstagram" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://youtube.com/tucanal" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="https://tiktok.com/@tutiktok" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <!-- Iconos sociales animados -->
+            <div class="social-icons flex gap-4 frenword-bounce-in">
+                <a href="https://instagram.com/tuinstagram" target="_blank" aria-label="Instagram" class="text-pink-400 hover:text-pink-600 text-xl"><i class="fab fa-instagram"></i></a>
+                <a href="https://youtube.com/tucanal" target="_blank" aria-label="YouTube" class="text-pink-400 hover:text-pink-600 text-xl"><i class="fab fa-youtube"></i></a>
+                <a href="https://tiktok.com/@tutiktok" target="_blank" aria-label="TikTok" class="text-pink-400 hover:text-pink-600 text-xl"><i class="fab fa-tiktok"></i></a>
             </div>
         </div>
     </header>
 
     <main>
-        <section id="hero" class="hero-section">
-            <div class="hero-content container">
-                <h1>Tu dosis diaria de inspiración en belleza, estilo de vida y momentos familiares.</h1>
-                <p>Descubre mis consejos, experiencias y mucho más para una vida plena y feliz.</p>
-                <a href="#blog" class="btn-primary">Explora mi Blog</a>
-            </div>
-        </section>
-
-        <section id="about" class="about-section container">
-            <h2>Quién Soy</h2>
-            <div class="about-content">
-                <img src="img/4cb63c24-6348-4e37-917e-6d3e421d35f6.jpg" alt="Foto de Laura Siri, influencer de belleza y estilo de vida" class="profile-pic" loading="lazy">
-                <div class="about-text">
-                    <p>¡Hola! Soy Laura Siri, y estoy emocionada de compartir contigo mi viaje a través de la <strong>belleza</strong>, el <strong>estilo de vida</strong> y la <strong>aventura de la maternidad</strong>.</p>
-                    <p>En este espacio, encontrarás consejos prácticos sobre cuidado de la piel y maquillaje, ideas para vivir una vida más consciente y organizada, y mis experiencias honestas sobre criar a mi familia. Creo en la autenticidad y en encontrar la belleza en lo cotidiano. Mi misión es inspirarte a sentirte bien contigo misma, a crear un hogar lleno de amor y a disfrutar cada momento.</p>
-                    <h3>Mis Valores</h3>
-                    <ul>
-                        <li><i class="fas fa-heart"></i> Autenticidad y Transparencia</li>
-                        <li><i class="fas fa-lightbulb"></i> Inspiración y Positivismo</li>
-                        <li><i class="fas fa-sparkles"></i> Belleza Real y Cuidado Personal</li>
-                        <li><i class="fas fa-family"></i> Amor Familiar y Vínculos Fuertes</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="blog" class="blog-section container">
-            <h2>Últimas Publicaciones</h2>
-            <div class="blog-grid">
-                <article class="blog-post">
-                    <img src="https://via.placeholder.com/400x250/FFC0CB/FFFFFF?text=Maquillaje+Natural" alt="Maquillaje Natural para el Día a Día" loading="lazy">
-                    <h3>Maquillaje Natural para el Día a Día: Mi Rutina Rápida</h3>
-                    <p class="category">Belleza</p>
-                    <p>Descubre mis productos favoritos y trucos para un look fresco y radiante en solo 10 minutos.</p>
-                    <a href="#" class="btn-secondary">Leer Más</a>
-                </article>
-                <article class="blog-post">
-                    <img src="https://via.placeholder.com/400x250/ADD8E6/FFFFFF?text=Organizacion+Hogar" alt="5 Hábitos para un Hogar Organizado" loading="lazy">
-                    <h3>5 Hábitos Sencillos para un Hogar Siempre Organizado</h3>
-                    <p class="category">Estilo de Vida</p>
-                    <p>Pequeños cambios que harán una gran diferencia en la paz de tu hogar. ¡Pruébalos!</p>
-                    <a href="#" class="btn-secondary">Leer Más</a>
-                </article>
-                <article class="blog-post">
-                    <img src="https://via.placeholder.com/400x250/90EE90/FFFFFF?text=Actividades+Familia" alt="Actividades Divertidas en Familia" loading="lazy">
-                    <h3>Actividades Divertidas y Creativas para Hacer con Niños en Casa</h3>
-                    <p class="category">Familia</p>
-                    <p>Ideas para mantener a los pequeños entretenidos y crear recuerdos inolvidables juntos.</p>
-                    <a href="#" class="btn-secondary">Leer Más</a>
-                </article>
-                <article class="blog-post">
-                    <img src="https://via.placeholder.com/400x250/FFD700/FFFFFF?text=Capsula+Armario" alt="Armario Cápsula Primavera" loading="lazy">
-                    <h3>Crea tu Armario Cápsula de Primavera: Imprescindibles</h3>
-                    <p class="category">Moda</p>
-                    <p>Optimiza tu guardarropa con prendas versátiles y atemporales para esta temporada.</p>
-                    <a href="#" class="btn-secondary">Leer Más</a>
-                </article>
-            </div>
-        </section>
-
-        <section id="categories-overview" class="categories-overview container">
-            <h2>Explora por Categorías</h2>
-            <div class="category-grid">
-                <a href="#blog-belleza" class="category-card">
-                    <i class="fas fa-spa"></i>
-                    <h3>Belleza</h3>
-                    <p>Cuidado de la piel, maquillaje, reseñas y tips.</p>
-                </a>
-                <a href="#blog-estilo-vida" class="category-card">
-                    <i class="fas fa-home"></i>
-                    <h3>Estilo de Vida</h3>
-                    <p>Organización, bienestar, hábitos saludables.</p>
-                </a>
-                <a href="#blog-familia" class="category-card">
-                    <i class="fas fa-child"></i>
-                    <h3>Familia</h3>
-                    <p>Maternidad, crianza, actividades familiares.</p>
-                </a>
-                <a href="#blog-moda" class="category-card">
-                    <i class="fas fa-tshirt"></i>
-                    <h3>Moda</h3>
-                    <p>Tendencias, outfits, consejos de estilo.</p>
-                </a>
-            </div>
-        </section>
-
-        <section id="gallery" class="gallery-section">
-            <h2>Galería de Inspiración</h2>
-            <div class="gallery-carousel">
-                <img src="img/1.jpg" alt="Inspiración 1, maquillaje y belleza" class="carousel-item active" loading="lazy">
-                <img src="img/2.jpg" alt="Inspiración 2, estilo de vida" class="carousel-item" loading="lazy">
-                <img src="img/3.jpg" alt="Inspiración 3, familia y momentos" class="carousel-item" loading="lazy">
-                <img src="https://via.placeholder.com/800x500/FFD700/FFFFFF?text=Foto+4" alt="Inspiración 4, moda y outfits" class="carousel-item" loading="lazy">
-                <button class="carousel-nav prev" aria-label="Anterior" type="button"><i class="fas fa-chevron-left"></i></button>
-                <button class="carousel-nav next" aria-label="Siguiente" type="button"><i class="fas fa-chevron-right"></i></button>
-            </div>
-        </section>
-
-        <section id="contact" class="contact-section container">
-            <h2>Colaboraciones y Contacto</h2>
-            <p>¿Te gustaría trabajar conmigo o simplemente saludarme? ¡Envía un mensaje! 📧</p>
-            <form action="#" method="POST" class="contact-form">
-                <div class="form-group">
-                    <label for="name">Nombre:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Correo Electrónico:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Mensaje:</label>
-                    <textarea id="message" name="message" rows="6" required></textarea>
-                </div>
-                <button type="submit" class="btn-primary">Enviar Mensaje</button>
-            </form>
-            <div class="contact-info">
-                <h3>Para Colaboraciones:</h3>
-                <p>Si eres una marca o empresa interesada en colaborar, por favor, detalla tu propuesta en el mensaje o envía un correo directamente a: <a href="mailto:laurasiri2395@hotmail.com">laurasiri2395@hotmail.com</a></p>
-                <p>Puedes descargar mi <a href="media-kit.pdf" target="_blank">Media Kit aquí</a>.</p>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="container">
-            <div class="footer-links">
-                <a href="#hero">Inicio</a>
-                <a href="#about">Acerca de Mí</a>
-                <a href="#blog">Blog</a>
-                <a href="#contact">Contacto</a>
-                <a href="politica-privacidad.html" target="_blank">Política de Privacidad</a>
-            </div>
-            <div class="footer-social">
-                <a href="https://instagram.com/tuinstagram" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://youtube.com/tucanal" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                <a href="https://tiktok.com/@tutiktok" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            </div>
-            <p>&copy; 2025 @laurasiriblog. Todos los derechos reservados.</p>
+    <!-- Hero: Imagen de fondo, mensaje principal y botón -->
+    <section id="hero"
+        class="hero-section frenword-fade-in bg-cover bg-center min-h-[500px] flex items-center justify-center relative"
+        style="background-image: url('img/The 5G Future_ Which Country will Adopt the New Standard First_.jpg');"
+        data-aos="fade-up"
+        data-aos-easing="ease-in-out"
+    >
+        <div class="hero-content container mx-auto text-center bg-white/70 rounded-xl p-8 shadow-lg backdrop-blur-md"
+            data-aos="zoom-in"
+            data-aos-delay="100"
+        >
+            <h1 class="text-4xl md:text-5xl font-frenword-playfair font-bold text-pink-400 mb-4 frenword-fade-in"
+                data-aos="fade-down"
+                data-aos-delay="200"
+            >
+                Tu dosis diaria de inspiración en belleza, estilo de vida y momentos familiares.
+            </h1>
+            <p class="text-lg md:text-xl mb-6 frenword-fade-in text-gray-700"
+                data-aos="fade-up"
+                data-aos-delay="400"
+            >
+                Descubre mis consejos, experiencias y mucho más para una vida plena y feliz.
+            </p>
+            <a href="#blog"
+                class="btn-primary bg-pink-400 text-white px-6 py-3 rounded-lg shadow hover:bg-pink-500 transition frenword-bounce-in"
+                data-aos="zoom-in"
+                data-aos-delay="600"
+                aria-label="Explora mi Blog"
+            >
+                Explora mi Blog
+            </a>
         </div>
-    </footer>
+    </section>
 
-    <script src="script.js"></script>
+    <!-- Acerca de mí: Presentación y valores -->
+    <section id="about" class="about-section container mx-auto my-12 p-8 bg-white rounded-xl shadow-lg frenword-fade-in-up" data-aos="fade-right">
+        <h2 class="text-3xl font-frenword-playfair font-bold text-pink-400 mb-6" data-aos="fade-left">Quién Soy</h2>
+        <div class="about-content flex flex-col md:flex-row items-center gap-8" data-aos="fade-up">
+            <img src="img/4cb63c24-6348-4e37-917e-6d3e421d35f6.jpg" alt="Foto de Laura Siri, influencer de belleza y estilo de vida" class="profile-pic w-40 h-40 rounded-full shadow-lg frenword-bounce-in" loading="lazy" data-aos="zoom-in">
+            <div class="about-text text-lg" data-aos="fade-up" data-aos-delay="200">
+                <p class="mb-2">¡Hola! Soy Laura Siri, y estoy emocionada de compartir contigo mi viaje a través de la <strong>belleza</strong>, el <strong>estilo de vida</strong> y la <strong>aventura de la maternidad</strong>.</p>
+                <p class="mb-4">En este espacio, encontrarás consejos prácticos sobre cuidado de la piel y maquillaje, ideas para vivir una vida más consciente y organizada, y mis experiencias honestas sobre criar a mi familia. Creo en la autenticidad y en encontrar la belleza en lo cotidiano. Mi misión es inspirarte a sentirte bien contigo misma, a crear un hogar lleno de amor y a disfrutar cada momento.</p>
+                <h3 class="text-2xl font-frenword-playfair text-pink-400 mb-2">Mis Valores</h3>
+                <ul class="list-disc pl-6 space-y-1">
+                    <li><i class="fas fa-heart text-pink-400 mr-2"></i> Autenticidad y Transparencia</li>
+                    <li><i class="fas fa-lightbulb text-pink-400 mr-2"></i> Inspiración y Positivismo</li>
+                    <li><i class="fas fa-sparkles text-pink-400 mr-2"></i> Belleza Real y Cuidado Personal</li>
+                    <li><i class="fas fa-family text-pink-400 mr-2"></i> Amor Familiar y Vínculos Fuertes</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Últimas publicaciones: Grid de artículos con efecto hover y animaciones -->
+    <section id="blog" class="blog-section container mx-auto my-12 p-8 bg-white rounded-xl shadow-lg frenword-fade-in-up" data-aos="fade-up">
+        <h2 class="text-3xl font-frenword-playfair font-bold text-pink-400 mb-6" data-aos="fade-right">Últimas Publicaciones</h2>
+        <div class="blog-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Cada artículo tiene efecto hover y animación al aparecer -->
+            <article class="blog-post bg-pink-50 rounded-lg shadow-md p-6 frenword-fade-in-up
+         hover:scale-105 hover:shadow-xl transition-transform transition-shadow duration-300"
+         data-aos="zoom-in-up">
+                <img src="https://via.placeholder.com/400x250/FFC0CB/FFFFFF?text=Maquillaje+Natural" alt="Maquillaje Natural para el Día a Día" class="rounded-lg mb-4" loading="lazy">
+                <h3 class="text-xl font-frenword-playfair text-pink-400 mb-2">Maquillaje Natural para el Día a Día: Mi Rutina Rápida</h3>
+                <p class="category text-pink-500 font-semibold mb-2">Belleza</p>
+                <p class="mb-4">Descubre mis productos favoritos y trucos para un look fresco y radiante en solo 10 minutos.</p>
+                <a href="#" class="btn-secondary bg-pink-400 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-500 transition frenword-bounce-in">Leer Más</a>
+            </article>
+            <article class="blog-post bg-pink-50 rounded-lg shadow-md p-6 frenword-fade-in-up
+         hover:scale-105 hover:shadow-xl transition-transform transition-shadow duration-300"
+         data-aos="zoom-in-up">
+                <img src="https://via.placeholder.com/400x250/ADD8E6/FFFFFF?text=Organizacion+Hogar" alt="5 Hábitos para un Hogar Organizado" class="rounded-lg mb-4" loading="lazy">
+                <h3 class="text-xl font-frenword-playfair text-pink-400 mb-2">5 Hábitos Sencillos para un Hogar Siempre Organizado</h3>
+                <p class="category text-blue-500 font-semibold mb-2">Estilo de Vida</p>
+                <p class="mb-4">Pequeños cambios que harán una gran diferencia en la paz de tu hogar. ¡Pruébalos!</p>
+                <a href="#" class="btn-secondary bg-pink-400 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-500 transition frenword-bounce-in">Leer Más</a>
+            </article>
+            <article class="blog-post bg-pink-50 rounded-lg shadow-md p-6 frenword-fade-in-up
+         hover:scale-105 hover:shadow-xl transition-transform transition-shadow duration-300"
+         data-aos="zoom-in-up">
+                <img src="https://via.placeholder.com/400x250/90EE90/FFFFFF?text=Actividades+Familia" alt="Actividades Divertidas en Familia" class="rounded-lg mb-4" loading="lazy">
+                <h3 class="text-xl font-frenword-playfair text-pink-400 mb-2">Actividades Divertidas y Creativas para Hacer con Niños en Casa</h3>
+                <p class="category text-green-500 font-semibold mb-2">Familia</p>
+                <p class="mb-4">Ideas para mantener a los pequeños entretenidos y crear recuerdos inolvidables juntos.</p>
+                <a href="#" class="btn-secondary bg-pink-400 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-500 transition frenword-bounce-in">Leer Más</a>
+            </article>
+            <article class="blog-post bg-pink-50 rounded-lg shadow-md p-6 frenword-fade-in-up
+         hover:scale-105 hover:shadow-xl transition-transform transition-shadow duration-300"
+         data-aos="zoom-in-up">
+                <img src="https://via.placeholder.com/400x250/FFD700/FFFFFF?text=Capsula+Armario" alt="Armario Cápsula Primavera" class="rounded-lg mb-4" loading="lazy">
+                <h3 class="text-xl font-frenword-playfair text-pink-400 mb-2">Crea tu Armario Cápsula de Primavera: Imprescindibles</h3>
+                <p class="category text-yellow-500 font-semibold mb-2">Moda</p>
+                <p class="mb-4">Optimiza tu guardarropa con prendas versátiles y atemporales para esta temporada.</p>
+                <a href="#" class="btn-secondary bg-pink-400 text-white px-4 py-2 rounded-lg shadow hover:bg-pink-500 transition frenword-bounce-in">Leer Más</a>
+            </article>
+        </div>
+    </section>
+
+    <!-- Categorías: Tarjetas con efecto hover y animaciones -->
+    <section id="categories-overview" class="categories-overview container mx-auto my-12 p-8 bg-white rounded-xl shadow-lg frenword-fade-in-up" data-aos="fade-left">
+        <h2 class="text-3xl font-frenword-playfair font-bold text-pink-400 mb-6" data-aos="fade-right">Explora por Categorías</h2>
+        <div class="category-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Cada tarjeta tiene efecto hover y animación al aparecer -->
+            <a href="#blog-belleza" class="category-card bg-pink-50 rounded-lg shadow-md p-6 flex flex-col items-center frenword-bounce-in
+                   hover:scale-105 hover:shadow-xl transition-transform transition-shadow duration-300"
+               data-aos="flip-left">
+                <i class="fas fa-spa text-3xl text-pink-400 mb-2"></i>
+                <h3 class="text-xl font-frenword-playfair text-pink-400 mb-2">Belleza</h3>
+                <p class="text-center">Cuidado de la piel, maquillaje, reseñas y tips.</p>
+            </a>
+            <a href="#blog-estilo-vida" class="category-card bg-pink-50 rounded-lg shadow-md p-6 flex flex-col items-center frenword-bounce-in hover:scale-105 transition" data-aos="flip-left" data-aos-delay="100">
+                <i class="fas fa-home text-3xl text-pink-400 mb-2"></i>
+                <h3 class="text-xl font-frenword-playfair text-pink-400 mb-2">Estilo de Vida</h3>
+                <p class="text-center">Organización, bienestar, hábitos saludables.</p>
+            </a>
+            <a href="#blog-familia" class="category-card bg-pink-50 rounded-lg shadow-md p-6 flex flex-col items-center frenword-bounce-in hover:scale-105 transition" data-aos="flip-left" data-aos-delay="200">
+                <i class="fas fa-child text-3xl text-pink-400 mb-2"></i>
+                <h3 class="text-xl font-frenword-playfair text-pink-400 mb-2">Familia</h3>
+                <p class="text-center">Maternidad, crianza, actividades familiares.</p>
+            </a>
+            <a href="#blog-moda" class="category-card bg-pink-50 rounded-lg shadow-md p-6 flex flex-col items-center frenword-bounce-in hover:scale-105 transition" data-aos="flip-left" data-aos-delay="300">
+                <i class="fas fa-tshirt text-3xl text-pink-400 mb-2"></i>
+                <h3 class="text-xl font-frenword-playfair text-pink-400 mb-2">Moda</h3>
+                <p class="text-center">Tendencias, outfits, consejos de estilo.</p>
+            </a>
+        </div>
+    </section>
+
+    <!-- Galería de inspiración: Carrusel de imágenes animadas -->
+    <section id="gallery" class="gallery-section container mx-auto my-12 p-8 bg-white rounded-xl shadow-lg frenword-fade-in-up" data-aos="fade-up">
+        <h2 class="text-3xl font-frenword-playfair font-bold text-pink-400 mb-6" data-aos="fade-right">Galería de Inspiración</h2>
+        <div class="relative">
+            <!-- Botón anterior -->
+            <button class="carousel-nav prev absolute left-0 top-1/2 -translate-y-1/2 bg-pink-400 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-pink-500 transition z-10" aria-label="Anterior">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <!-- Carrusel de imágenes -->
+            <div class="gallery-carousel flex gap-4 items-center justify-center overflow-hidden">
+                <img src="img/1.jpg" alt="Inspiración 1, maquillaje y belleza" class="carousel-item w-72 h-48 object-cover rounded-lg shadow frenword-fade-in" loading="lazy" data-aos="zoom-in">
+                <img src="img/2.jpg" alt="Inspiración 2, estilo de vida" class="carousel-item w-72 h-48 object-cover rounded-lg shadow frenword-fade-in" loading="lazy" data-aos="zoom-in" data-aos-delay="100">
+                <img src="img/3.jpg" alt="Inspiración 3, familia y momentos" class="carousel-item w-72 h-48 object-cover rounded-lg shadow frenword-fade-in" loading="lazy" data-aos="zoom-in" data-aos-delay="200">
+                <img src="https://via.placeholder.com/800x500/FFD700/FFFFFF?text=Foto+4" alt="Inspiración 4, moda y outfits" class="carousel-item w-72 h-48 object-cover rounded-lg shadow frenword-fade-in" loading="lazy" data-aos="zoom-in" data-aos-delay="300">
+            </div>
+            <!-- Botón siguiente -->
+            <button class="carousel-nav next absolute right-0 top-1/2 -translate-y-1/2 bg-pink-400 text-white rounded-full w-10 h-10 flex items-center justify-center shadow-lg hover:bg-pink-500 transition z-10" aria-label="Siguiente">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+    </section>
+
+    <!-- Contacto y colaboraciones: Formulario y datos de contacto -->
+    <section id="contact" class="contact-section container mx-auto my-12 p-8 bg-white rounded-xl shadow-lg frenword-fade-in-up" data-aos="fade-up">
+        <h2 class="text-3xl font-frenword-playfair font-bold text-pink-400 mb-6" data-aos="fade-right">Colaboraciones y Contacto</h2>
+        <p class="mb-4">¿Te gustaría trabajar conmigo o simplemente saludarme? ¡Envía un mensaje! 📧</p>
+        <form action="#" method="POST" class="contact-form grid gap-4" data-aos="zoom-in">
+            <!-- Campos del formulario con estilos y validación -->
+            <div class="form-group flex flex-col">
+                <label for="name" class="mb-1 font-semibold">Nombre:</label>
+                <input type="text" id="name" name="name" required class="border border-pink-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
+            </div>
+            <div class="form-group flex flex-col">
+                <label for="email" class="mb-1 font-semibold">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required class="border border-pink-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400">
+            </div>
+            <div class="form-group flex flex-col">
+                <label for="message" class="mb-1 font-semibold">Mensaje:</label>
+                <textarea id="message" name="message" rows="6" required class="border border-pink-200 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-pink-400"></textarea>
+            </div>
+            <button type="submit" class="btn-primary bg-pink-400 text-white px-6 py-3 rounded-lg shadow hover:bg-pink-500 transition frenword-bounce-in">Enviar Mensaje</button>
+        </form>
+        <!-- Información adicional para colaboraciones -->
+        <div class="contact-info mt-8" data-aos="fade-up" data-aos-delay="200">
+            <h3 class="text-xl font-frenword-playfair text-pink-400 mb-2">Para Colaboraciones:</h3>
+            <p class="mb-2">Si eres una marca o empresa interesada en colaborar, por favor, detalla tu propuesta en el mensaje o envía un correo directamente a: <a href="mailto:laurasiri2395@hotmail.com" class="text-pink-400 underline">laurasiri2395@hotmail.com</a></p>
+            <p>Puedes descargar mi <a href="media-kit.pdf" target="_blank" class="text-pink-400 underline">Media Kit aquí</a>.</p>
+        </div>
+    </section>
+</main>
+
+<!-- Footer: enlaces y redes sociales, diseño elegante sin animación AOS -->
+<footer class="bg-gradient-to-r from-pink-50 via-white to-pink-100 backdrop-blur-md py-10 mt-16 shadow-inner border-t border-pink-100">
+    <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-8">
+        <nav class="footer-links flex flex-wrap gap-6 mb-6 md:mb-0 font-frenword-montserrat text-base" aria-label="Navegación de pie de página">
+            <a href="#hero" class="text-pink-400 hover:text-pink-600 transition font-semibold">Inicio</a>
+            <a href="#about" class="text-pink-400 hover:text-pink-600 transition font-semibold">Acerca de Mí</a>
+            <a href="#blog" class="text-pink-400 hover:text-pink-600 transition font-semibold">Blog</a>
+            <a href="#contact" class="text-pink-400 hover:text-pink-600 transition font-semibold">Contacto</a>
+            <a href="politica-privacidad.html" target="_blank" class="text-pink-400 hover:text-pink-600 transition font-semibold">Política de Privacidad</a>
+        </nav>
+        <div class="footer-social flex gap-6">
+            <a href="https://instagram.com/tuinstagram" target="_blank" aria-label="Instagram" class="text-pink-400 hover:text-pink-600 text-3xl transition"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/tucanal" target="_blank" aria-label="YouTube" class="text-pink-400 hover:text-pink-600 text-3xl transition"><i class="fab fa-youtube"></i></a>
+            <a href="https://tiktok.com/@tutiktok" target="_blank" aria-label="TikTok" class="text-pink-400 hover:text-pink-600 text-3xl transition"><i class="fab fa-tiktok"></i></a>
+        </div>
+    </div>
+    <div class="text-center mt-8">
+        <p class="text-gray-400 text-sm font-frenword-montserrat">&copy; 2025 <span class="font-frenword-playfair text-pink-400">@laurasiriblog</span>. Todos los derechos reservados.</p>
+    </div>
+</footer>
+
+<!-- Scripts: AOS para animaciones al hacer scroll y JS personalizado -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1200,
+    once: false,
+    easing: 'ease-in-out',
+    anchorPlacement: 'top-bottom'
+  });
+</script>
+<script src="script.js"></script>
 </body>
 </html>

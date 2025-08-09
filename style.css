@@ -14,14 +14,24 @@
     --font-body: 'Roboto', sans-serif; /* Fuente limpia para el cuerpo */
 }
 
+/* Fuentes elegantes */
+body, .nav-list a, .btn-primary, .btn-secondary, .category-card, .about-text, .footer-links a {
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+h1, h2, h3 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: 1px;
+}
+
 /* Base */
 body {
-    font-family: var(--font-body);
+    
     margin: 0;
     padding: 0;
     line-height: 1.6;
     color: var(--text-color);
-    background-color: var(--background-light);
+    background: linear-gradient(135deg, #fff6fb 0%, #f7b4d6 100%);
+    min-height: 100vh;
     scroll-behavior: smooth;
 }
 
@@ -62,7 +72,7 @@ h2::after {
 
 a {
     text-decoration: none;
-    color: var(--primary-color);
+    color: #d94f8a;
     transition: color 0.3s ease;
 }
 
@@ -74,6 +84,15 @@ img {
     max-width: 100%;
     height: auto;
     display: block;
+}
+
+/* Animación de fade-in para secciones */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px);}
+    to { opacity: 1; transform: translateY(0);}
+}
+section, .blog-post, .category-card, .gallery-section, .contact-section {
+    animation: fadeInUp 1s ease;
 }
 
 /* Botones */
@@ -95,6 +114,8 @@ img {
 
 .btn-primary:hover {
     background-color: var(--secondary-color);
+    color: #fff;
+    transform: scale(1.05);
 }
 
 .btn-secondary {
@@ -138,10 +159,16 @@ header .container {
 }
 
 .logo a {
-    font-family: var(--font-heading);
-    font-size: 1.8em;
-    font-weight: bold;
-    color: var(--primary-color);
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    letter-spacing: 2px;
+    color: #f7b4d6;
+    text-shadow: 0 2px 8px rgba(247,180,214,0.2);
+    transition: color 0.3s;
+}
+
+.logo a:hover {
+    color: #ff69b4;
 }
 
 .main-nav .nav-list {
@@ -149,6 +176,9 @@ header .container {
     margin: 0;
     padding: 0;
     display: flex;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(247,180,214,0.08);
 }
 
 .main-nav .nav-list li {
@@ -222,7 +252,9 @@ header .container {
 
 /* Hero Section */
 .hero-section {
-    background-image: url('img/The\ 5G\ Future_\ Which\ Country\ will\ Adopt\ the\ New\ Standard\ First_.jpg'); /* Reemplaza con tu imagen */
+    background-image: 
+        linear-gradient(135deg, rgba(247,180,214,0.25) 0%, rgba(255,246,251,0.8) 100%),
+        url('img/The 5G Future_ Which Country will Adopt the New Standard First_.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -233,11 +265,19 @@ header .container {
     align-items: center;
     justify-content: center;
     min-height: 500px;
+    position: relative;
+    overflow: hidden;
+    background-attachment: fixed;
+    z-index: 1;
 }
+
+/* Elimina la segunda regla de .hero-section y el ::before si no es necesario */
 
 .hero-content {
     text-align: center;
     max-width: 800px;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content h1 {
@@ -806,6 +846,41 @@ header.scrolled {
 .carousel-item {
     transition: opacity 0.8s ease-in-out; /* Suaviza el cambio de opacidad */
     /* ... (resto de tus estilos de carousel-item) ... */
+}
+
+/* Mejora visual para secciones principales */
+section,
+.about-section,
+.blog-section,
+.categories-overview,
+.gallery-section,
+.contact-section {
+    background: var(--white);
+    border-radius: 18px;
+    box-shadow: 0 4px 24px rgba(247,180,214,0.10);
+    margin: 40px auto;
+    padding: 32px 24px;
+    max-width: 1000px;
+    position: relative;
+    z-index: 2;
+}
+
+/* Mejora el contraste del texto en el hero */
+.hero-section {
+    background: linear-gradient(135deg, #f7b4d6 0%, #fff6fb 100%);
+    position: relative;
+    overflow: hidden;
+}
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(247,180,214,0.15);
+    z-index: 1;
+}
+.hero-content {
+    position: relative;
+    z-index: 2;
 }
 
 

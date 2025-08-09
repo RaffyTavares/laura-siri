@@ -1,0 +1,17 @@
+/* Puedes poner esto en tu style.css */
+.carousel-item {
+    opacity: 0;
+    transition: opacity 0.5s;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+.carousel-item.active {
+    opacity: 1;
+    position: relative;
+}
+.gallery-carousel {
+    position: relative;
+    min-height: 200px;
+}
