@@ -15,3 +15,23 @@
     position: relative;
     min-height: 200px;
 }
+
+@media (max-width: 768px) {
+    .gallery-carousel {
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        gap: 1rem;
+        min-height: 200px;
+    }
+    .carousel-item {
+        position: relative !important;
+        min-width: 48%;
+        max-width: 48%;
+        opacity: 1 !important;
+        margin: 0;
+    }
+    .carousel-item:not(:nth-child(-n+2)) {
+        display: none;
+    }
+}
