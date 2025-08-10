@@ -21,14 +21,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Carrusel de la galería mostrando 3 imágenes a la vez
+    // Carrusel responsivo
     const carouselItems = document.querySelectorAll('.carousel-item');
     const prevBtn = document.querySelector('.carousel-nav.prev');
     const nextBtn = document.querySelector('.carousel-nav.next');
     let currentIndex = 0;
-    const visibleCount = 3;
+
+    function getVisibleCount() {
+        if (window.innerWidth <= 768) return 2;      // móvil
+        if (window.innerWidth <= 1024) return 3;     // tablet
+        return 4;                                    // escritorio
+    }
 
     function showSlides(index) {
+        const visibleCount = getVisibleCount();
         carouselItems.forEach((item, i) => {
             item.style.display = 'none';
             item.classList.remove('active');
@@ -41,11 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function nextSlide() {
+        const visibleCount = getVisibleCount();
         currentIndex = (currentIndex + visibleCount) % carouselItems.length;
         showSlides(currentIndex);
     }
 
     function prevSlide() {
+        const visibleCount = getVisibleCount();
         currentIndex = (currentIndex - visibleCount + carouselItems.length) % carouselItems.length;
         showSlides(currentIndex);
     }
@@ -56,6 +64,9 @@ document.addEventListener('DOMContentLoaded', () => {
             prevBtn.addEventListener('click', prevSlide);
             nextBtn.addEventListener('click', nextSlide);
         }
+        window.addEventListener('resize', () => {
+            showSlides(currentIndex);
+        });
     }
 
     // Cerrar menú móvil al hacer clic en un enlace
