@@ -96,4 +96,21 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // Envío de WhatsApp
+    function sendWhatsApp(event) {
+        event.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        // Reemplaza por tu número de WhatsApp con código de país, ejemplo: 549XXXXXXXXXX
+        const phone = '18293012054';
+
+        const text = `Hola Laura Siri! 👋%0AMi nombre es: ${name}%0AMi correo: ${email}%0AMensaje: ${message}`;
+        const url = `https://wa.me/${phone}?text=${text}`;
+
+        window.open(url, '_blank');
+        return false;
+    }
 });
