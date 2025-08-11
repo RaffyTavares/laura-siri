@@ -82,30 +82,33 @@ document.addEventListener('DOMContentLoaded', () => {
     // Validación del formulario de contacto
     const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-            const name = contactForm.querySelector('input[name="name"]').value;
-            const email = contactForm.querySelector('input[name="email"]').value;
-            const message = contactForm.querySelector('textarea[name="message"]').value;
+    contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+        const name = contactForm.querySelector('input[name="name"]').value;
+        const email = contactForm.querySelector('input[name="email"]').value;
+        const message = contactForm.querySelector('textarea[name="message"]').value;
 
-            if (name && email && message) {
-                alert('Formulario enviado correctamente.');
-                contactForm.reset();
-            } else {
-                alert('Por favor, completa todos los campos.');
-            }
+        if (name && email && message) {
+            alert('Formulario enviado correctamente.');
+            contactForm.reset();
+        } else {
+            alert('Por favor, completa todos los campos.');
+        }
+        
         });
     }
 
-    // Envío de WhatsApp
+    
+});
+
+// Envío de WhatsApp
     function sendWhatsApp(event) {
         event.preventDefault();
         const name = document.getElementById('name').value.trim();
         const email = document.getElementById('email').value.trim();
         const message = document.getElementById('message').value.trim();
 
-        // Reemplaza por tu número de WhatsApp con código de país, ejemplo: 549XXXXXXXXXX
-        const phone = '18293012054';
+        const phone = '18293012054'; // Tu número con código de país
 
         const text = `Hola Laura Siri! 👋%0AMi nombre es: ${name}%0AMi correo: ${email}%0AMensaje: ${message}`;
         const url = `https://wa.me/${phone}?text=${text}`;
@@ -113,4 +116,3 @@ document.addEventListener('DOMContentLoaded', () => {
         window.open(url, '_blank');
         return false;
     }
-});
